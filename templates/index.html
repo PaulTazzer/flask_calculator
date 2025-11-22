@@ -4,47 +4,74 @@
     <meta charset="UTF-8">
     <title>Paul Flask Web Calculator</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-        }
-        input, select, button {
-            padding: 10px;
-            margin: 5px;
-            font-size: 18px;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 22px;
-            color: black;
-        }
-    </style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full height */
+    background-color: #f5f5f5;
+}
+
+.calculator-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;           /* Take most of small screen */
+    max-width: 400px;     /* But not too wide on large screens */
+}
+
+input, select, button {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Optional: smaller font and inputs on very small screens */
+@media (max-width: 320px) {
+    input, select, button {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+</style>
+
 </head>
 <body>
-
-    <h1>Paul's Web Calculator(flask)</h1>
-
+  <div class="calculator-container">
+    <h1>Flask Calculator</h1>
     <form method="POST">
-        <input type="number" name="num1" step="any" placeholder="Enter number 1" required>
-
-        <select name="operator">
-            <option value="+">+</option>
-            <option value="-">−</option>
-            <option value="*">×</option>
-            <option value="/">÷</option>
-        </select>
-
-        <input type="number" name="num2" step="any" placeholder="Enter number 2" required>
-
-        <button type="submit">Calculate</button>
+      <input type="number" name="num1" placeholder="Number 1" required>
+      <select name="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="number" name="num2" placeholder="Number 2" required>
+      <button type="submit">Calculate</button>
     </form>
-
     {% if result is not none %}
-        <div class="result">
-            <strong>Result:</strong> {{ result }}
-        </div>
+    <p>Result: {{ result }}</p>
     {% endif %}
-
+  </div>
 </body>
-</html>
