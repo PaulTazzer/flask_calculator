@@ -56,7 +56,7 @@
 </head>
 <body>
   <div class="calculator-container">
-    <h1>Flask Calculator</h1>
+    <h1>{{ 'num1, operator, num2' }}</h1> <!-- Display the variable names -->
     <form method="POST">
       <input type="number" name="num1" placeholder="Number 1" required>
       <select name="operator">
@@ -68,12 +68,12 @@
       <input type="number" name="num2" placeholder="Number 2" required>
       <button type="submit">Calculate</button>
     </form>
+
     {% if result is not none %}
-      <p>Values:</p>
-      <p>Number 1: {{ num1 }}</p>
-      <p>Operator: {{ operator }}</p>
-      <p>Number 2: {{ num2 }}</p>
-      <p>Result: {{ result }}</p>
+      <h3><strong>num1:</strong> {{ num1 }}</h3>  <!-- Display variable names in bold -->
+      <h3><strong>operator:</strong> {{ operator }}</h3>
+      <h3><strong>num2:</strong> {{ num2 }}</h3>
+      <h3><strong>result:</strong> {{ result }}</h3>
     {% endif %}
   </div>
 </body>
