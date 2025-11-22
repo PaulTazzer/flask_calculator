@@ -70,10 +70,10 @@
     </form>
 
     {% if result is not none %}
-      <h3><strong>num1:</strong> {{ num1 }}</h3>  <!-- Display variable names in bold -->
-      <h3><strong>operator:</strong> {{ operator }}</h3>
-      <h3><strong>num2:</strong> {{ num2 }}</h3>
-      <h3><strong>result:</strong> {{ result }}</h3>
+      <strong>num1:</strong> {{ num1 }}  <!-- Only the variable names are in bold -->
+      <strong>operator:</strong> {{ operator }}
+      <strong>num2:</strong> {{ num2 }}
+      <strong>result:</strong> {{ result }}
     {% endif %}
   </div>
 </body>
