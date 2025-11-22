@@ -4,57 +4,55 @@
     <meta charset="UTF-8">
     <title>Paul Flask Web Calculator</title>
     <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;  /* Full height */
-    background-color: #f5f5f5;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
 
-.calculator-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 90%;           /* Take most of small screen */
-    max-width: 400px;     /* But not too wide on large screens */
-}
+        .calculator-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
 
-input, select, button {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+        input, select, button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
-button {
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-}
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
 
-button:hover {
-    background-color: #45a049;
-}
+        button:hover {
+            background-color: #45a049;
+        }
 
-/* Optional: smaller font and inputs on very small screens */
-@media (max-width: 320px) {
-    input, select, button {
-        width: 100%;
-        font-size: 14px;
-    }
-}
-</style>
-
+        @media (max-width: 320px) {
+            input, select, button {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
   <div class="calculator-container">
@@ -71,7 +69,12 @@ button:hover {
       <button type="submit">Calculate</button>
     </form>
     {% if result is not none %}
-    <p>Result: {{ result }}</p>
+      <p>Values:</p>
+      <p>Number 1: {{ num1 }}</p>
+      <p>Operator: {{ operator }}</p>
+      <p>Number 2: {{ num2 }}</p>
+      <p>Result: {{ result }}</p>
     {% endif %}
   </div>
 </body>
+</html>
